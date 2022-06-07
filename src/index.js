@@ -1,20 +1,12 @@
 import { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './index.css';
-import { Canvas } from './components';
+import App from './App';
 
-function App() {
-  return (
-    <StrictMode>
-      <Canvas>
-        <mesh>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </Canvas>
-    </StrictMode>
-  );
-}
-
-render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
